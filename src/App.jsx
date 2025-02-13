@@ -1,9 +1,10 @@
 import React from 'react'
+import Weather from './components/Weather'
 
-function App() {
+const App = () => {
   return (
-    <div className='min-h-[100vh] bg-slate-500 flex flex-col items-center justify-center text-amber-500'>
-      app
+    <div className='flex flex-col items-center justify-center bg-blue-200 min-h-[100vh]'>
+      <Weather/>
     </div>
   )
 }
