@@ -3,7 +3,7 @@ import Weather from './components/Weather'
 
 const App = () => {
   return (
-    <div className='flex flex-col items-center justify-center bg-blue-200 min-h-[100vh]'>
+    <div className='grid bg-blue-200 min-h-[100vh]'>
       <Weather/>
     </div>
   )
