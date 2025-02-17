@@ -27,9 +27,7 @@ const Weather = () => {
         "10d":rain,
         "10n":rain,
         "13d":snow,
-        "13n":snow,
-
-        
+        "13n":snow,        
     }
 
     const searchCity = async (city) => {
@@ -37,12 +35,11 @@ const Weather = () => {
             alert("Enter City Name");
             return;
         }
+
         try {
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_ID}`
-
             const response = await fetch(url);
             const data = await response.json();
-
 
             if(!response.ok){
                 alert(data.message);
