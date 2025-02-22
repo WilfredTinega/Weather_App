@@ -7,6 +7,7 @@ import humidity from "../assets/humidity.png"
 import rain from "../assets/rain.png"
 import snow from "../assets/snow.png"
 import wind from "../assets/wind.png"
+import { toast } from 'react-toastify'
 
 const Weather = () => {
 
@@ -31,9 +32,15 @@ const Weather = () => {
     }
 
     const searchCity = async (city) => {
-        if (city === ""){
-            alert("Enter City Name");
-            return;
+        const value = inputRef.current.value.trim();
+        if(!value){
+            toast.error("Enter City Name",{
+                position: 'top-right'
+            })
+        }else{
+            toast.success('Searching',{
+                position:'top-right'
+            })
         }
 
         try {
@@ -42,8 +49,8 @@ const Weather = () => {
             const data = await response.json();
 
             if(!response.ok){
-                alert(data.message);
-                return;
+                toast.error(data.message)
+                return
             }
 
             console.log(data);
